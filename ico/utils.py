@@ -102,6 +102,9 @@ def get_libraries(chain: BaseChain, contract_name, contract: Contract) -> dict:
     return libraries
 
 
+def test_setup():
+    return True
+
 def decimalize_token_amount(contract: Contract, amount: int) -> Decimal:
     """Convert raw fixed point token amount to decimal format.
 
