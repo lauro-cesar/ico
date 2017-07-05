@@ -8,7 +8,7 @@ testnet:
 
     # Do we perform deployed contract source code verification on etherscan.io service.
     # This is a semi automatic process using a Firefox browser.
-    verify_on_etherscan: yes
+    verify_on_etherscan: no
 
     #
     # Contracts section defines different smart contracts that
