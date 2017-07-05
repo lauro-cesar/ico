@@ -1,0 +1,32 @@
+# A testnet deployment for the crowdsale contracts
+testnet:
+
+    # Chain we are connected to.
+    # Either "mainnet" or "ropsten".
+    # Affects Etherscan verification process only.
+    chain: mainnet
+
+    # Do we perform deployed contract source code verification on etherscan.io service.
+    # This is a semi automatic process using a Firefox browser.
+    verify_on_etherscan: no
+
+    #
+    # Contracts section defines different smart contracts that
+    # are required to run the ICO.
+    #
+    contracts:
+        pricing_strategy:
+            contract_name: MilestonePricing
+            contract_file: MilestonePricing.sol
+            arguments:
+                # _preicoPrice: "{{ to_wei('0.005', 'ether') }}"
+                # _preicoContractAddress: "{{contracts.preico.address}}"
+                _milestones:
+                    - 1499292000
+                    - "{{ to_wei('0.0010', 'ether') }}"
+                    - 1499292900
+                    - "{{ to_wei('0.0011', 'ether') }}"
+                    - 1499293800
+                    - "{{ to_wei('0.0012', 'ether') }}"
+                    - 1499295600
+                    - "{{ to_wei('0.0013', 'ether') }}"
