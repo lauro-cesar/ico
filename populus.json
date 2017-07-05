@@ -1,6 +1,5 @@
 {
   "chains": {
-
     "mainnet": {
       "chain": {
         "class": "populus.chain.external.ExternalChain"
@@ -99,10 +98,6 @@
       }
     },
     "ropsten": {
-      // "chain": {
-      //   "class": "populus.chain.geth.TestnetChain",
-      //   "timeout": 240
-      // },
       "chain": {
         "class": "populus.chain.external.ExternalChain"
       },
