@@ -249,6 +249,8 @@ def deploy_crowdsale_from_file(project: Project, yaml_filename: str, deployment_
     """Deploy crowdsale plan."""
     chain_data = load_crowdsale_definitions(yaml_filename, deployment_name)
     chain_name = chain_data["chain"]
+    print(deploy_address)
+    print(project.get_chain(chain_name))
 
     with project.get_chain(chain_name) as chain:
         web3 = chain.web3
