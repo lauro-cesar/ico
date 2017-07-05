@@ -61,6 +61,7 @@ def extract_deployment_details(yaml_filename: str, chain: str) -> dict:
     """Read yaml definition file and interpolate all variables."""
     with open(yaml_filename, "rt") as inp:
         data = ruamel.yaml.load(inp, ruamel.yaml.RoundTripLoader)
+        print(data)
         return data[chain]
 
 
