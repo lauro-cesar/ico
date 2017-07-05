@@ -250,13 +250,16 @@ def deploy_crowdsale_from_file(project: Project, yaml_filename: str, deployment_
     chain_data = load_crowdsale_definitions(yaml_filename, deployment_name)
     chain_name = chain_data["chain"]
     print(chain_name)
+    print("#"*200)
     print(chain_data)
+    print("#"*200)
     
     print(dir(project.get_chain(chain_name)))
-
+    print("#"*200)
+    
     with project.get_chain(chain_name) as chain:
         web3 = chain.web3
-        print(deploy_address)
+        
         return _deploy_contracts(project, chain, web3, yaml_filename, chain_data, deploy_address)
 
 
