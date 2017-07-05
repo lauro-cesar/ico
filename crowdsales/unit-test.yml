@@ -72,8 +72,8 @@ unit_test:
             contract_name: CrowdsaleToken
             contract_file: CrowdsaleToken.sol
             arguments:
-                _name: Example-testnet
-                _symbol: EXA
+                _name: Example-testnets
+                _symbol: EXAs
                 _initialSupply: 0
                 _decimals: 0
                 _mintable: True
@@ -118,8 +118,8 @@ unit_test:
                 _token: "{{contracts.token.address}}"
                 _pricingStrategy: "{{contracts.pricing_strategy.address}}"
                 _multisigWallet: "{{contracts.team_multisig.address}}"
-                _start: "{{ timestamp(datetime(2017, 4, 15, 16, 0)) }}"
-                _end: "{{ timestamp(datetime(2017, 4, 15, 16, 0)) + 30*24*3600 }}"
+                _start: "{{ time() + 30*24*3600 }}"
+                _end: "{{ time() + 60*24*3600 }}"
                 _minimumFundingGoal: 7500
                 _maximumSellableTokens: 4000000
         #
