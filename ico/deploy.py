@@ -57,6 +57,8 @@ def deploy_contract(project: Project, chain, deploy_address, contract_def: dict,
     chain.registrar.registrar_backends["Memory"].contract_addresses = defaultdict(set)
 
     try:
+        print(transaction)
+        print(dir(transaction))
         contract, txhash = chain.provider.deploy_contract(contract_name, deploy_transaction=transaction, deploy_kwargs=kwargs)
     except Exception as e:
         raise RuntimeError("Could not deploy contract {}, constructor arguments {}".format(contract_name, kwargs)) from e
@@ -138,6 +140,7 @@ def deploy_crowdsale(project: Project, chain, source_definitions: dict, deploy_a
                 constructor_args=runtime_data["contracts"][name]["constructor_args"],
                 libraries=runtime_data["contracts"][name]["libraries"],
                 browser_driver=browser_driver)
+
             runtime_data["contracts"][name]["etherscan_link"] = get_etherscan_link(chain_name, runtime_data["contracts"][name]["address"])
 
             # Write out our expanded contract
