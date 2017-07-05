@@ -24,6 +24,8 @@ from ico.utils import asbool
 from ico.utils import get_libraries
 from ico.etherscan import verify_contract
 from ico.etherscan import get_etherscan_link
+from web3.utils.transactions import get_block_gas_limit
+
 
 
 def deploy_contract(project: Project, chain, deploy_address, contract_def: dict, chain_name: str, need_unlock=True) -> Contract:
@@ -57,8 +59,11 @@ def deploy_contract(project: Project, chain, deploy_address, contract_def: dict,
     chain.registrar.registrar_backends["Memory"].contract_addresses = defaultdict(set)
 
     try:
+
         print(transaction)
-        print(dir(transaction))
+        gas = gas_estimate = web3.eth.estimateGas(transaction)
+        print(gas)
+        
         contract, txhash = chain.provider.deploy_contract(contract_name, deploy_transaction=transaction, deploy_kwargs=kwargs)
     except Exception as e:
         raise RuntimeError("Could not deploy contract {}, constructor arguments {}".format(contract_name, kwargs)) from e
