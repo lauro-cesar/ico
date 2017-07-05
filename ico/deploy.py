@@ -198,6 +198,7 @@ def exec_lines(lines: str, context: dict, print_prefix=None):
         if print_prefix:
             print(print_prefix, buffer)
         try:
+            print(buffer)
             exec(buffer, context)
         except Exception as e:
             raise RuntimeError("Failed when running: {}".format(buffer)) from e
