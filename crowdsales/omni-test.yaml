@@ -78,6 +78,12 @@ testnet:
                 _name: demo2020
                 _symbol: d20
                 _initialSupply: 1000
+                _decimals: 2
+                _mintable: True
+
+
+
+                # tring _name, string _symbol, uint _initialSupply, uint _decimals, bool _mintable
         #
         # Pricing strategy
         #
