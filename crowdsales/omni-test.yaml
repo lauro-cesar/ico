@@ -97,8 +97,8 @@ testnet:
             contract_name: MilestonePricing
             contract_file: MilestonePricing.sol
             arguments:
-                _preicoPrice: "{{ to_wei('0.005', 'ether') }}"
-                _preicoContractAddress: "{{contracts.preico.address}}"
+                # _preicoPrice: "{{ to_wei('0.005', 'ether') }}"
+                # _preicoContractAddress: "{{contracts.preico.address}}"
                 _milestones:
                     - 1499284800
                     - "{{ to_wei('0.0010', 'ether') }}"
