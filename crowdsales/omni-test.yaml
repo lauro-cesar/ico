@@ -58,7 +58,7 @@ testnet:
             arguments:
                 _owner: "{{contracts.team_multisig.address}}"
                 # Set 30 days in the future from the moment of deployment
-                _freezeEndsAt: 1499263200
+                _freezeEndsAt: 1499284800
                 _weiMinimumLimit: "{{ to_wei(750, 'ether') }}"
         #
         # Token contract
@@ -75,8 +75,8 @@ testnet:
             contract_name: CrowdsaleToken
             contract_file: CrowdsaleToken.sol
             arguments:
-                _name: demo2019
-                _symbol: d19
+                _name: demo2020
+                _symbol: d20
                 _initialSupply: 1000
         #
         # Pricing strategy
@@ -94,13 +94,13 @@ testnet:
                 _preicoPrice: "{{ to_wei('0.005', 'ether') }}"
                 _preicoContractAddress: "{{contracts.preico.address}}"
                 _milestones:
-                    - 1499263200
+                    - 1499284800
                     - "{{ to_wei('0.0010', 'ether') }}"
-                    - 1499264100
+                    - 1499285700
                     - "{{ to_wei('0.0011', 'ether') }}"
-                    - 1499265000
+                    - 1499286600
                     - "{{ to_wei('0.0012', 'ether') }}"
-                    - 1499265900
+                    - 1499287500
                     - "{{ to_wei('0.0013', 'ether') }}"
         #
         # Crowdsale
@@ -119,8 +119,8 @@ testnet:
                 _token: "{{contracts.token.address}}"
                 _pricingStrategy: "{{contracts.pricing_strategy.address}}"
                 _multisigWallet: "{{contracts.team_multisig.address}}"
-                _start: 1499263200
-                _end: 1499266800
+                _start: 1499284800
+                _end: 1499288400
                 _minimumFundingGoal: 10
                 _maximumSellableTokens: 4000000
         #
