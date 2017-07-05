@@ -63,13 +63,15 @@ def deploy_contract(project: Project, chain, deploy_address, contract_def: dict,
         # print(transaction)
         # gas = gas_estimate = web3.eth.estimateGas(transaction)
         # print(gas)
-        block = web3.eth.getBlock("latest");
-        gasLimit = block
-        print(gasLimit['gasLimit'])
-        print("0x%s" % int(gasLimit['gasLimit']))
+        # block = web3.eth.getBlock("latest");
+        # gasLimit = block
+        # print(gasLimit['gasLimit'])
+        # print("0x%s" % int(gasLimit['gasLimit']))
 
+        gas_price = int(web3.eth.gasPrice * 1.2)
+        print(gas_price)
         transaction.update({
-            'gas':"%s" % int(gasLimit['gasLimit'])
+            "gasPrice": gas_price
             })
         contract, txhash = chain.provider.deploy_contract(contract_name, deploy_transaction=transaction, deploy_kwargs=kwargs)
     except Exception as e:
