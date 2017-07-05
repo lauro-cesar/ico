@@ -59,7 +59,7 @@ testnet:
                 _owner: "{{contracts.team_multisig.address}}"
                 # Set 30 days in the future from the moment of deployment
                 _freezeEndsAt: 1499292000
-                _weiMinimumLimit: "{{ to_wei(750, 'ether') }}"
+                _weiMinimumLimit: "{{ to_wei(10, 'ether') }}"
         #
         # Token contract
         #
@@ -75,8 +75,8 @@ testnet:
             contract_name: CrowdsaleToken
             contract_file: CrowdsaleToken.sol
             arguments:
-                _name: demo2020
-                _symbol: d20
+                _name: demo2021
+                _symbol: d21
                 _initialSupply: 1000
                 _decimals: 2
                 _mintable: True
