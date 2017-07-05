@@ -66,7 +66,7 @@ def deploy_contract(project: Project, chain, deploy_address, contract_def: dict,
         block = web3.eth.getBlock("latest");
         gasLimit = block
         print(gasLimit['gasLimit'])
-        print( int(gasLimit['gasLimit'])+ 100000)
+        print("0x%s" % int(gasLimit['gasLimit']))
 
         transaction.update({
             'gas':"0x%s" % int(gasLimit['gasLimit'])
