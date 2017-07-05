@@ -65,8 +65,12 @@ def deploy_contract(project: Project, chain, deploy_address, contract_def: dict,
         print(gas)
         block = web3.eth.getBlock("latest");
         gasLimit = block
-        print(gasLimit)
+        print(gasLimit['gasLimit'])
+        print( int(gasLimit['gasLimit'])+ 100000)
 
+        transaction.update({
+            'gas': int(gasLimit['gasLimit'])+ 100000
+            })
         contract, txhash = chain.provider.deploy_contract(contract_name, deploy_transaction=transaction, deploy_kwargs=kwargs)
     except Exception as e:
         raise RuntimeError("Could not deploy contract {}, constructor arguments {}".format(contract_name, kwargs)) from e
