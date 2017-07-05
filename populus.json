@@ -24,7 +24,7 @@
         "provider": {
           "class": "web3.providers.rpc.HTTPProvider",
           "settings": {
-            "endpoint_uri": "http://192.168.1.66:8545",
+            "endpoint_uri": "http://localhost:8545",
             "request_kwargs": {
                 "timeout": 180
             }
@@ -56,7 +56,7 @@
         "provider": {
           "class": "web3.providers.rpc.HTTPProvider",
           "settings": {
-            "endpoint_uri": "http://192.168.1.66:8547",
+            "endpoint_uri": "http://localhost:8547",
             "request_kwargs": {
                 "timeout": 180
             }
@@ -89,7 +89,7 @@
         "provider": {
           "class": "web3.providers.rpc.HTTPProvider",
           "settings": {
-            "endpoint_uri": "http://192.168.1.66:8545",
+            "endpoint_uri": "http://localhost:8545",
             "request_kwargs": {
                 "timeout": 250
             }
