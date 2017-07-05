@@ -4,7 +4,7 @@ testnet:
     # Chain we are connected to.
     # Either "mainnet" or "ropsten".
     # Affects Etherscan verification process only.
-    chain: ropsten
+    chain: mainnet
 
     # Do we perform deployed contract source code verification on etherscan.io service.
     # This is a semi automatic process using a Firefox browser.
