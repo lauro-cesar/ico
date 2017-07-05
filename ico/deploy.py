@@ -69,7 +69,7 @@ def deploy_contract(project: Project, chain, deploy_address, contract_def: dict,
         print( int(gasLimit['gasLimit'])+ 100000)
 
         transaction.update({
-            'gas': int(gasLimit['gasLimit'])+ 100000
+            'gas': int(gasLimit['gasLimit'])
             })
         contract, txhash = chain.provider.deploy_contract(contract_name, deploy_transaction=transaction, deploy_kwargs=kwargs)
     except Exception as e:
