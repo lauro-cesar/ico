@@ -22,11 +22,11 @@ testnet:
                 # _preicoPrice: "{{ to_wei('0.005', 'ether') }}"
                 # _preicoContractAddress: "{{contracts.preico.address}}"
                 _milestones:
-                    - 1499292000
+                    - 1499295647
                     - "{{ to_wei('0.0010', 'ether') }}"
-                    - 1499292900
+                    - 1499382047
                     - "{{ to_wei('0.0011', 'ether') }}"
-                    - 1499293800
+                    - 1499468447
                     - "{{ to_wei('0.0012', 'ether') }}"
-                    - 1499295600
+                    - 1499554847
                     - "{{ to_wei('0.0013', 'ether') }}"
