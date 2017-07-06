@@ -33,7 +33,7 @@ unit_test:
             contract_file: Wallet.sol
             arguments:
                 _owners:
-                    - "0x64699Cac766f405Af610BAd218B6734732c36c34"
+                    - "0x2c4d8daf0c7a67e62577f42f17865b06434af8d1"
                     - "0x5fFF1129C4A282C40ecEb9F53d8A86a4f579d7Bb"
                 _required: 2
                 _daylimit: 0
