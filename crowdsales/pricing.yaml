@@ -6,8 +6,8 @@ pricing:
             contract_name: MilestonePricing
             contract_file: MilestonePricing.sol
             arguments:
-                _preicoPrice: "{{ to_wei('0.008', 'ether') }}"
-                _preicoContractAddress: '0x8178e81418b2bf507a0f9228fed5106cbbcc5c42'
+                # _preicoPrice: "{{ to_wei('0.008', 'ether') }}"
+                # _preicoContractAddress: '0x8178e81418b2bf507a0f9228fed5106cbbcc5c42'
                 _milestones:
                     - 1499354045
                     - "{{ to_wei('0.010', 'ether') }}"
