@@ -1,5 +1,5 @@
 # A testnet deployment for the crowdsale contracts
-testnet:
+unit_test:
 
     # Chain we are connected to.
     # Either "mainnet" or "ropsten".
