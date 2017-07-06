@@ -165,17 +165,17 @@ unit_test:
 
     # Make sure that everything we have deployed all contracts in good state
     # and their internal state is sane
-    verify_actions: |
-        assert token.call().owner() == team_multisig.address, "Expected owner {}, got {}".format(token.call().owner(),team_multisig.address)
-        assert crowdsale.call().owner() == team_multisig.address
-        assert preico.call().owner() == team_multisig.address
-        assert token.call().owner() == team_multisig.address
-        assert token.call().upgradeMaster() == team_multisig.address
-        assert finalize_agent.call().teamMultisig() == team_multisig.address
-        assert finalize_agent.call().isSane()
+    # verify_actions: |
+        # assert token.call().owner() == team_multisig.address, "Expected owner {}, got {}".format(token.call().owner(),team_multisig.address)
+        # assert crowdsale.call().owner() == team_multisig.address
+        # assert preico.call().owner() == team_multisig.address
+        # assert token.call().owner() == team_multisig.address
+        # assert token.call().upgradeMaster() == team_multisig.address
+        # assert finalize_agent.call().teamMultisig() == team_multisig.address
+        # assert finalize_agent.call().isSane()
 
-        # assert crowdsale.call().getState() == CrowdsaleState.PreFunding
+        # # assert crowdsale.call().getState() == CrowdsaleState.PreFunding
 
-        # To be used with the deposit instructions for contributors
-        sig_data = crowdsale._prepare_transaction("buy")
-        print("Crowdsale.buy() data payload is", sig_data["data"])
+        # # To be used with the deposit instructions for contributors
+        # sig_data = crowdsale._prepare_transaction("buy")
+        # print("Crowdsale.buy() data payload is", sig_data["data"])
