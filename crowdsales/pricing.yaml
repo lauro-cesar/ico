@@ -5,9 +5,10 @@ pricing:
         pricing_strategy:
             contract_name: MilestonePricing
             contract_file: MilestonePricing.sol
+            preicoPrice: "{{ to_wei('0.008', 'ether') }}"
+            preicoContractAddress: '0x8178e81418b2bf507a0f9228fed5106cbbcc5c42'
             arguments:
-                # _preicoPrice: "{{ to_wei('0.008', 'ether') }}"
-                # _preicoContractAddress: '0x8178e81418b2bf507a0f9228fed5106cbbcc5c42'
+                
                 _milestones:
                     - 1499354045
                     - "{{ to_wei('0.010', 'ether') }}"
@@ -17,3 +18,16 @@ pricing:
                     # - "{{ to_wei('0.012', 'ether') }}"
                     # - "{{ 1499354045 + 3*3600 }}"
                     # - "{{ to_wei('0.013', 'ether') }}"
+    post_actions: |
+        # Enable new token minting by a crowdsale contract
+        pricing_strategy.transact({"from": deploy_address}).setPreicoAddress(pricing_strategy.preicoContractAddress, pricing_strategy.preicoPrice)
+
+        # # Set actions what happen at the end of the crodsale.
+        # # Enable token mintint at the end of the crowdsale to create bonus pool, founder pool and such
+        # token.transact({"from": deploy_address}).setMintAgent(finalize_agent.address, True)
+        # crowdsale.transact({"from": deploy_address}).setFinalizeAgent(finalize_agent.address)
+        # token.transact({"from": deploy_address}).setReleaseAgent(finalize_agent.address)
+
+        # # Move ownership of all owned contracts to the team multisig address
+        # crowdsale.transact({"from": deploy_address}).transferOwnership(team_multisig.address)
+        # token.transact({"from": deploy_address}).transferOwnership(team_multisig.address)
