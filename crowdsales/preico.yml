@@ -6,6 +6,6 @@ presale:
             contract_name: PresaleFundCollector
             contract_file: PresaleFundCollector.sol
             arguments:
-                _owner: "{{ address(0x70c37f75fb8de597e7bc73a620d00301a1e91c80) }}"
+                _owner: address(0x70c37f75fb8de597e7bc73a620d00301a1e91c80)
                 _freezeEndsAt: "{{ time() + 2*3600 }}"
                 _weiMinimumLimit: "{{ to_wei(750, 'ether') }}"
