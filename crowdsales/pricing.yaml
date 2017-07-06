@@ -1,0 +1,19 @@
+pricing:
+    chain: ropsten
+    verify_on_etherscan: no
+    contracts:
+        pricing_strategy:
+            contract_name: MilestonePricing
+            contract_file: MilestonePricing.sol
+            arguments:
+                _preicoPrice: "{{ to_wei('0.008', 'ether') }}"
+                _preicoContractAddress: '0x8178e81418b2bf507a0f9228fed5106cbbcc5c42'
+                _milestones:
+                    - 1499354045
+                    - "{{ to_wei('0.010', 'ether') }}"
+                    - "{{ 1499354045 + 1*3600 }}"
+                    - "{{ to_wei('0.011', 'ether') }}"
+                    - "{{ 1499354045 + 2*3600 }}"
+                    - "{{ to_wei('0.012', 'ether') }}"
+                    - "{{ 1499354045 + 3*3600 }}"
+                    - "{{ to_wei('0.013', 'ether') }}"
