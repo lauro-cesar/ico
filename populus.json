@@ -197,7 +197,8 @@
     "contracts_source_dir": "./contracts",
     "settings": {
       "optimize": true,
-      "import_remappings": ["zeppelin=zeppelin", "ico=ico"]
+      "import_remappings": ["zeppelin=zeppelin", "ico=ico"],
+      "output_values": ["abi", "bin", "bin-runtime", "devdoc", "metadata", "userdoc"]
     }
   },
   "contracts": {
@@ -223,6 +224,7 @@
       }
     }
   },
+
   "version": "3",
   "web3": {
     "GethIPC": {
